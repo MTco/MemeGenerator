@@ -6,7 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 
 		<!-- Javascript -->
-		<script src="js/console-image.js"></script>
 		<script src="js/angular.min.js"></script>
 		<script src="js/script.js"></script>
 
@@ -15,8 +14,11 @@
 	<div class="container">
 
 		<br>
-		<h2 class="text-center">Meme Generator</h2>
+		<h2 class="text-centerasd">Meme Generator</h2>
 		<br>
+
+		<img id="template" src="img/template.png" style="display: none;">
+		<img id="current_image" src="http://i.imgur.com/LaENqOV.jpg" style="display: none;">
 
 		<div ng-controller="MainController">
 
@@ -35,7 +37,6 @@
 
 					</div>
 
-
 					<div class="col-xs-12 col-md-6">
 
 						<div class="panel panel-default">
@@ -43,11 +44,16 @@
 								<h2>Meme Settings</h2>
 							</div>
 					    <div class="panel-body text-center">
-								<input type="text" class="form-control" ng-model='toptext' ng-change="alterMeme()" placeholder="top text"/>
+								<input type="text" class="form-control" ng-model='toptext' ng-change="addText()" placeholder="top text"/>
 								<br>
-								<input type="text" class="form-control" ng-model='bottomtext' ng-change="alterMeme()" placeholder="bottom text"/>
+								<input type="text" class="form-control" ng-model='bottomtext' ng-change="addText()" placeholder="bottom text"/>
 								<br>
-								<select class="form-control" ng-model="selectedMeme" ng-init="selectedMeme = memes[0]" ng-change="alterMeme()" ng-options="m.name for m in memes"></select>
+								<select
+									ng-model="selectedMeme"
+									ng-change="alterMeme()"
+									ng-options="m.name for m in memes">
+								</select>
+
 								<br>
 								<button class="btn btn-large btn-primary" ng-click="create()">Save Image</button>
 							</div>
