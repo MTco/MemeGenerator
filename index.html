@@ -17,7 +17,7 @@
 		<h2 class="text-centerasd">Meme Generator</h2>
 		<br>
 
-		<img id="template" src="img/template.png" style="display: none;">
+		<img id="template" src="img/template/template.png" style="display: none;">
 		<img id="current_image" src="http://i.imgur.com/LaENqOV.jpg" style="display: none;">
 
 		<div ng-controller="MainController">
@@ -49,6 +49,7 @@
 								<input type="text" class="form-control" ng-model='bottomtext' ng-change="addText()" placeholder="bottom text"/>
 								<br>
 								<select
+									class="form-control"
 									ng-model="selectedMeme"
 									ng-change="alterMeme()"
 									ng-options="m.name for m in memes">

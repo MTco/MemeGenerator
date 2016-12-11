@@ -2,19 +2,20 @@ var app = angular.module('Meme', []);
 app.controller('MainController', function($scope) {
 
 	$scope.memes = [
-		{ name:"10 Guy", url: "http://i.imgur.com/LaENqOV.jpg"},
-		{ name:"Player Stats", url: "img/PlayerStats.png"},
-		{ name:"Advice Dog", url: "http://i.imgur.com/Qk0VO6D.jpg"},
-		{ name:"Advice God", url: "http://i.imgur.com/xH2fSFg.jpg"},
+		{ name:"10 Guy", url: "img/memes/generic/10 Guy.jpg"},
+		{ name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"},
+		{ name:"Advice Dog", url: "img/memes/generic/Advice Dog.jpg"},
+		{ name:"Advice God", url: "img/memes/generic/Advice God.jpg"},
 	];
 
 	$scope.selectedMeme = $scope.memes[0];
 
-	$scope.alterMeme = function(val) {
+	$scope.alterMeme = function() {
 		var current_image = document.getElementById("current_image");
 		current_image.src = $scope.selectedMeme.url;
 		current_image.onload = function() { $scope.addText(); };
 	};
+	$scope.alterMeme();
 
 	$scope.toptext = '';
 	$scope.bottomtext = '';
