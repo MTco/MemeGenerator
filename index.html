@@ -8,9 +8,11 @@
   		<link rel="stylesheet" type="text/css" href="css/select2.css">
 
 		<!-- Javascript -->
-		<script src="js/angular.min.js"></script>
-		<script src="js/angular-sanitize.js"></script>
-		<script src="js/select.min.js"></script>
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/lib/ui-bootstrap.min.js"></script>
+		<script src="js/lib/angular-sanitize.js"></script>
+		<script src="js/lib/select.min.js"></script>
+
 		<script src="js/script.js"></script>
 
 	</head>
@@ -55,13 +57,39 @@
 									<br>
 								</div>
 
-								<ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control">
-								  <ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
-								  <ui-select-choices repeat="meme in memes">
-									<img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
-									<div ng-bind-html="meme.name" style="display: inline"></div>
-								  </ui-select-choices>
-								</ui-select>
+								<uib-tabset active="activeTab">
+
+						          <uib-tab index="0" heading="WoW">
+									  <ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control">
+										<ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
+										<ui-select-choices repeat="meme in wow_memes">
+										  <img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
+										  <div ng-bind-html="meme.name" style="display: inline"></div>
+										</ui-select-choices>
+									  </ui-select>
+						          </uib-tab>
+
+								  <uib-tab index="1" heading="Game of Thrones">
+									  <ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control">
+										<ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
+										<ui-select-choices repeat="meme in got_memes">
+										  <img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
+										  <div ng-bind-html="meme.name" style="display: inline"></div>
+										</ui-select-choices>
+									  </ui-select>
+						          </uib-tab>
+
+								  <uib-tab index="2" heading="Other">
+									  <ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control">
+	  								  <ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
+	  								  <ui-select-choices repeat="meme in memes">
+	  									<img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
+	  									<div ng-bind-html="meme.name" style="display: inline"></div>
+	  								  </ui-select-choices>
+	  								</ui-select>
+						          </uib-tab>
+
+						        </uib-tabset>
 
 								<br>
 								<br>

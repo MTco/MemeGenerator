@@ -1,8 +1,17 @@
-var app = angular.module('Meme', ['ngSanitize', 'ui.select']);
+var app = angular.module('Meme', ['ngSanitize', 'ui.select', 'ui.bootstrap']);
 app.controller('MainController', function($scope) {
 
+	$scope.activeTab = 0;
+
+	$scope.wow_memes = [
+		{ name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"}
+	];
+
+	$scope.got_memes = [
+		{ name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"}
+	];
+
 	$scope.memes = [
-		{ name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"},
 		{ name: "10 Guy", url: "img/memes/generic/10 Guy.jpg" },
 		{ name: "3rd World Success Kid", url: "img/memes/generic/3rd World Success Kid.jpg" },
 		{ name: "90's Problems", url: "img/memes/generic/90's Problems.jpg" },
