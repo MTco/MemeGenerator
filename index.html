@@ -2,11 +2,15 @@
 	<head>
 		<title>Meme Generator</title>
 
-		<!-- Bootstrap -->
+		<!-- CSS -->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/select.min.css"/>
+  		<link rel="stylesheet" type="text/css" href="css/select2.css">
 
 		<!-- Javascript -->
 		<script src="js/angular.min.js"></script>
+		<script src="js/angular-sanitize.js"></script>
+		<script src="js/select.min.js"></script>
 		<script src="js/script.js"></script>
 
 	</head>
@@ -14,7 +18,7 @@
 	<div class="container">
 
 		<br>
-		<h2 class="text-centerasd">Meme Generator</h2>
+		<h2 class="text-center">Meme Generator</h2>
 		<br>
 
 		<img id="template" src="img/template/template.png" style="display: none;">
@@ -43,18 +47,23 @@
 					    <div class="panel-heading">
 								<h2>Meme Settings</h2>
 							</div>
-					    <div class="panel-body text-center">
-								<input type="text" class="form-control" ng-model='toptext' ng-change="addText()" placeholder="top text"/>
-								<br>
-								<input type="text" class="form-control" ng-model='bottomtext' ng-change="addText()" placeholder="bottom text"/>
-								<br>
-								<select
-									class="form-control"
-									ng-model="selectedMeme"
-									ng-change="alterMeme()"
-									ng-options="m.name for m in memes">
-								</select>
+					    <div class="panel-body">
+								<div class="text-center">
+									<input type="text" class="form-control" ng-model='toptext' ng-change="addText()" placeholder="top text"/>
+									<br>
+									<input type="text" class="form-control" ng-model='bottomtext' ng-change="addText()" placeholder="bottom text"/>
+									<br>
+								</div>
 
+								<ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control">
+								  <ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
+								  <ui-select-choices repeat="meme in memes">
+									<img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
+									<div ng-bind-html="meme.name" style="display: inline"></div>
+								  </ui-select-choices>
+								</ui-select>
+
+								<br>
 								<br>
 								<button class="btn btn-large btn-primary" ng-click="create()">Save Image</button>
 							</div>
