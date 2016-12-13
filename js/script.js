@@ -8,7 +8,32 @@ app.controller('MainController', function($scope) {
 	];
 
 	$scope.got_memes = [
-		{ name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"}
+		{ name: "Arya Stark Bow.png", url: "img/memes/got/Arya Stark Bow.png" },
+		{ name: "Arya Stark.jpg", url: "img/memes/got/Arya Stark.jpg" },
+		{ name: "Cersei Lannister.png", url: "img/memes/got/Cersei Lannister.png" },
+		{ name: "Daenerys2.jpg", url: "img/memes/got/Daenerys2.jpg" },
+		{ name: "Daenerys.jpg", url: "img/memes/got/Daenerys.jpg" },
+		{ name: "Gendry.jpeg", url: "img/memes/got/Gendry.jpeg" },
+		{ name: "Gregor Clegane Helmet.jpg", url: "img/memes/got/Gregor Clegane Helmet.jpg" },
+		{ name: "Gregor Clegane.jpg", url: "img/memes/got/Gregor Clegane.jpg" },
+		{ name: "Joeffrey Baratheon.jpg", url: "img/memes/got/Joeffrey Baratheon.jpg" },
+		{ name: "JohnSnow Dead.jpg", url: "img/memes/got/JohnSnow Dead.jpg" },
+		{ name: "John_Snow.jpg", url: "img/memes/got/John_Snow.jpg" },
+		{ name: "JohnSnow.jpg", url: "img/memes/got/JohnSnow.jpg" },
+		{ name: "JohnSnow Sword.jpg", url: "img/memes/got/JohnSnow Sword.jpg" },
+		{ name: "Khal Drogo.jpg", url: "img/memes/got/Khal Drogo.jpg" },
+		{ name: "Margaery Tyrell.jpg", url: "img/memes/got/Margaery Tyrell.jpg" },
+		{ name: "Melisandre.jpg", url: "img/memes/got/Melisandre.jpg" },
+		{ name: "Ned Stark.jpg", url: "img/memes/got/Ned Stark.jpg" },
+		{ name: "Ramsay Bolton.jpeg", url: "img/memes/got/Ramsay Bolton.jpeg" },
+		{ name: "Sandor Clegane 2.jpg", url: "img/memes/got/Sandor Clegane 2.jpg" },
+		{ name: "Sandor Clegane charge.jpg", url: "img/memes/got/Sandor Clegane charge.jpg" },
+		{ name: "Sandor Clegane.jpg", url: "img/memes/got/Sandor Clegane.jpg" },
+		{ name: "Sansa Stark.jpeg", url: "img/memes/got/Sansa Stark.jpeg" },
+		{ name: "Tyrion Crossbow.jpeg", url: "img/memes/got/Tyrion Crossbow.jpeg" },
+		{ name: "Tyrion.jpg", url: "img/memes/got/Tyrion.jpg" },
+		{ name: "Tyrion Lannister.jpg", url: "img/memes/got/Tyrion Lannister.jpg" },
+		{ name: "Ygritte.jpg", url: "img/memes/got/Ygritte.jpg" }
 	];
 
 	$scope.memes = [
