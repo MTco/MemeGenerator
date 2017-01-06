@@ -10,8 +10,11 @@
 		$scope.got_memes = app.got_memes;
 		$scope.memes = app.memes;
 
-		$scope.current_meme = $scope.memes[0];
-		$scope.selectedMeme = $scope.memes[0].url;
+    $scope.current_wow_meme = $scope.wow_memes[0];
+    $scope.current_got_meme = $scope.got_memes[0];
+    $scope.current_meme = $scope.memes[0];
+
+		$scope.selectedMeme = $scope.wow_memes[0].url;
 
 		$scope.disabled = undefined;
 		$scope.language = {};
@@ -21,10 +24,11 @@
 		$scope.alterMeme = function(current_meme) {
 			$scope.selectedMeme = current_meme;
 			var current_image = document.getElementById("current_image");
+      current_image.crossOrigin = "anonymous";
 			current_image.src = $scope.selectedMeme;
 			current_image.onload = function() { $scope.addText(); };
 		};
-		$scope.alterMeme($scope.current_meme.url);
+		$scope.alterMeme($scope.current_wow_meme.url);
 
 		$scope.toptext = '';
 		$scope.bottomtext = '';
@@ -76,7 +80,6 @@
 				size = 20;
 
 			 	var tmp = text.substr(0,51).lastIndexOf(" ");
-				console.log(tmp);
 
 				var part1 = text.substr(0, tmp);
 				var part2 = text.substr(tmp, text.length);
@@ -86,8 +89,6 @@
 				ctx.fillText(part2, x, y+20);
 
 				text = part1;
-				console.log(part1);
-				console.log(part2);
 		 	}
 
 			//Set the text styles
@@ -99,17 +100,9 @@
 		$scope.addText();
 
 		$scope.create = function() {
-			var uri = document.getElementById('myCanvas').toDataURL();
-			downloadImage(uri,generateName());
+	     var uri = document.getElementById('myCanvas').toDataURL("image/png");
+       downloadImage(uri, "AzerothShard_Meme.png");
 		}
-
-		function generateName() {
-			var n = [];
-			for(var i =0; i < 10;i++) {
-				n.push((Math.floor(Math.random() *16)).toString(16));
-			}
-			return n.join('');
-		};
 
 		/* Save the img */
 		function downloadImage(uri,name) {
