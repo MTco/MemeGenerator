@@ -24,7 +24,7 @@
 		<br>
 
 		<img id="template" src="img/template/template.png" style="display: none;">
-		<img id="current_image" src="http://i.imgur.com/LaENqOV.jpg" style="display: none;">
+		<img id="current_image" src="" style="display: none;">
 
 		<div ng-controller="MainController">
 
@@ -60,7 +60,7 @@
 								<uib-tabset active="activeTab">
 
 			          	<uib-tab index="0" heading="WoW">
-									  <ui-select ng-model="current_wow_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_wow_meme.url)" class="form-control">
+									  <ui-select ng-model="current_wow_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_wow_meme.url)" class="form-control" ng-click="alterMeme(current_wow_meme.url)">
 											<ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
 											<ui-select-choices repeat="meme in (wow_memes | filter: $select.search)">
 											  <img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
@@ -70,7 +70,7 @@
 					          </uib-tab>
 
 								  <uib-tab index="1" heading="Game of Thrones">
-									  <ui-select ng-model="current_got_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_got_meme.url)" class="form-control">
+									  <ui-select ng-model="current_got_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_got_meme.url)" class="form-control" ng-click="alterMeme(current_got_meme.url)">
 											<ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
 											<ui-select-choices repeat="meme in (got_memes | filter: $select.search)">
 											  <img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
@@ -80,7 +80,7 @@
 				          </uib-tab>
 
 								  <uib-tab index="2" heading="Other">
-									  <ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control">
+									  <ui-select ng-model="current_meme" theme="select2" ng-disabled="disabled" ng-change="alterMeme(current_meme.url)" class="form-control" ng-click="alterMeme(current_meme.url)">
 	  								  <ui-select-match placeholder="Select a meme"><img ng-src="{{ $select.selected.url.replace('.', '_thumbnail.') }}" /> {{$select.selected.name}}</ui-select-match>
 	  								  <ui-select-choices repeat="meme in (memes | filter: $select.search)">
 	  									<img ng-src="{{ meme.url.replace('.', '_thumbnail.') }}" />
@@ -98,6 +98,17 @@
 									<input type="text" class="form-control" placeholder="http://image.org/image.png" ng-model="custom_image" ng-change="alterMeme(custom_image)">
 									<br>
 									<button class="btn btn-success" style="width: 100px;">Load</button>
+								</div>
+
+								<br>
+								<br>
+
+								<div class="text-center">
+									<h3>Custom image from file:</h3>
+									<center>
+										<input type="file" id="files" name="files[]" multiple class="btn btn-default btn-file">
+									</center>
+									(load images with NxN size)
 								</div>
 
 								<br>

@@ -4,7 +4,43 @@
   var app = angular.module('MemeGenerator', ['ngSanitize', 'ui.select', 'ui.bootstrap']);
 
   app.wow_memes = [
-    { name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"}
+    { name:"Player Stats", url: "img/memes/WoW/PlayerStats.png"},
+    { name:"Akama", url: "img/memes/WoW/Akama.jpg"},
+    { name:"Anetheron", url: "img/memes/WoW/Anetheron.jpg"},
+    { name:"Anub'arak", url: "img/memes/WoW/Anub'arak.jpg"},
+    { name:"Anub'arak 2", url: "img/memes/WoW/Anub'arak 2.png"},
+    { name:"Archimonde", url: "img/memes/WoW/Archimonde.jpg"},
+    { name:"Archimonde 2", url: "img/memes/WoW/Archimonde 2.jpg"},
+    { name:"Cairne Bloodhoof", url: "img/memes/WoW/Cairne Bloodhoof.jpg"},
+    { name:"Cenarius", url: "img/memes/WoW/Cenarius.jpg"},
+    { name:"Chen Stormstout", url: "img/memes/WoW/Chen Stormstout.png"},
+    { name:"Chen Stormstout 2", url: "img/memes/WoW/Chen Stormstout 2.jpg"},
+    { name:"Grom Hellscream", url: "img/memes/WoW/Grom Hellscream.jpg"},
+    { name:"Grom Hellscream 2", url: "img/memes/WoW/Grom Hellscream 2.jpg"},
+    { name:"Illidan Stormrage", url: "img/memes/WoW/Illidan Stormrage.jpg"},
+    { name:"Illidan Stormrage 2", url: "img/memes/WoW/Illidan Stormrage 2.jpg"},
+    { name:"Illidan vs Maiev", url: "img/memes/WoW/Illidan vs Maiev.jpg"},
+    { name:"Jaina Proudmoore", url: "img/memes/WoW/Jaina Proudmoore.jpg"},
+    { name:"Kael Thas Sunstrider", url: "img/memes/WoW/Kael Thas.png"},
+    { name:"Kel'Thuzad", url: "img/memes/WoW/Kel'Thuzad.png"},
+    { name:"Kel'Thuzad 2", url: "img/memes/WoW/Kel'Thuzad 2.jpg"},
+    { name:"Kil'jaeden", url: "img/memes/WoW/Kil'jaeden.jpg"},
+    { name:"Lich King", url: "img/memes/WoW/Lich King.jpg"},
+    { name:"Magtheridon", url: "img/memes/WoW/Magtheridon.jpg"},
+    { name:"Maiev Shadowsong", url: "img/memes/WoW/Maiev Shadowsong.jpeg"},
+    { name:"Malfurion Stormrage", url: "img/memes/WoW/Malfurion Stormrage.jpg"},
+    { name:"Mal'ganis", url: "img/memes/WoW/Mal'ganis.jpg"},
+    { name:"Mannoroth", url: "img/memes/WoW/Mannoroth.jpg"},
+    { name:"Muradin Bronzebeard", url: "img/memes/WoW/Muradin Bronzebeard.jpg"},
+    { name:"Ner'zhul", url: "img/memes/WoW/Ner'zhul.jpg"},
+    { name:"Rexxar", url: "img/memes/WoW/Rexxar.jpg"},
+    { name:"Rexxar 2", url: "img/memes/WoW/Rexxar 2.jpg"},
+    { name:"Sylvanas Windrunner", url: "img/memes/WoW/Sylvanas Windrunner.png"},
+    { name:"Thrall", url: "img/memes/WoW/Thrall.png"},
+    { name:"Tyrande Whisperwind", url: "img/memes/WoW/Tyrande Whisperwind.jpg"},
+    { name:"Uther Lightbringer", url: "img/memes/WoW/Uther Lightbringer.jpg"},
+    { name:"Vol'jin", url: "img/memes/WoW/Vol'jin.jpg"},
+    { name:"Vol'jin 2", url: "img/memes/WoW/Vol'jin 2.jpg"}
   ];
 
   app.got_memes = [
