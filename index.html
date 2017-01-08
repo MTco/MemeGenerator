@@ -21,7 +21,6 @@
 	<div class="container">
 
 		<h2 class="text-center">Meme Generator</h2>
-		<br>
 
 		<img id="template" src="img/template/template.png" style="display: none;">
 		<img id="current_image" src="" style="display: none;">
@@ -34,7 +33,7 @@
 
 					  <div class="panel panel-default">
 					    <div class="panel-heading">
-								<h6>Preview</h6>
+								<b>Preview</b>
 							</div>
 					    <div class="panel-body">
 								<div class="canvas"></div>
@@ -47,7 +46,7 @@
 
 						<div class="panel panel-default">
 					    <div class="panel-heading">
-								<h6>Meme Settings</h6>
+								<b>Meme Settings</b>
 							</div>
 					    <div class="panel-body">
 								<div class="text-center">
@@ -94,17 +93,14 @@
 								<br>
 
 								<div class="text-center">
-									<h3>Custom image URL:</h3>
+									<b>Custom image URL:</b>
 									<input type="text" class="form-control" placeholder="http://image.org/image.png" ng-model="custom_image" ng-change="alterMeme(custom_image)">
 									<br>
-									<button class="btn btn-success" style="width: 100px;">Load</button>
+<!--									<button class="btn btn-success" style="width: 100px;">Load</button> -->
 								</div>
 
-								<br>
-								<br>
-
 								<div class="text-center">
-									<h3>Custom image from file:</h3>
+									<b>Custom image from file:</b>
 									<center>
 										<input type="file" id="files" name="files[]" multiple class="btn btn-default btn-file">
 									</center>
