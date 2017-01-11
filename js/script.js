@@ -81,7 +81,29 @@
 
     	// reset the image
     	ctx.drawImage(template, 0, 0, 500, 500);
-    	ctx.drawImage(document.getElementById("current_image"), 100, 60, 300, 300);
+
+      var img = document.getElementById("current_image");
+
+      console.log(img.width);
+      console.log(img.height);
+      var w,h;
+
+      if (img.width != img.height) {
+        if (img.width > img.height) {
+          w = 300;
+          h = (img.height * w) / img.width;
+        }
+        else {
+          h = 300;
+          w = (img.width * h) / img.height;
+        }
+      }
+      else {
+        w = 300;
+        h = 300;
+      }
+
+    	ctx.drawImage(img, 100 + ((300-w)/2), 60 + ((300-h)/2), w, h);
 
     	$scope.drawText(ctx, $scope.toptext, 500/2, 25);
     	$scope.drawText(ctx, $scope.bottomtext, 500/2, 500 - 100);
